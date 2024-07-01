@@ -285,9 +285,14 @@ function drawLiveGridBlock(monitorConfig,subStreamChannel,forcedMonitorsPerRow,m
     if($('#monitor_live_' + monitorId).length === 0){
         var x = null;
         var y = null;
-        var monitorsPerRow = getMonitorsPerRow()
-        var width = monitorsPerRow
-        var height = width;
+        // var monitorsPerRow = getMonitorsPerRow()
+        // var width = monitorsPerRow
+        // var height = width;
+
+        var monitorsPerRow = 3;
+        var width = 4;
+        var height = monitorsPerRow;
+
         var isSmallMobile = isMobile || window.innerWidth <= 812;
         var html = buildLiveGridBlock(monitorConfig)
         var monitorOrderEngaged = dashboardOptions().switches.monitorOrder === 1;
@@ -312,11 +317,17 @@ function drawLiveGridBlock(monitorConfig,subStreamChannel,forcedMonitorsPerRow,m
             height = saved.height;
         }
         liveGridData.addWidget({
-            x,
-            y,
-            h: isSmallMobile ? 1 :  height,
+            // x,
+            // y,
+            // h: isSmallMobile ? 1 :  height,
+            // w: isSmallMobile ? 4 :  width,
+            // content: html
+            x: x !== null ? x : undefined, // x가 null이 아닌 경우만 x를 설정
+            y: y !== null ? y : undefined, // y가 null이 아닌 경우만 y를 설정
+            h: isSmallMobile ? 1 :  3,
             w: isSmallMobile ? 4 :  width,
-            content: html
+            content: html,
+            autoPosition: false
         });
         if(isMobile)liveGridData.disable();
         var theBlock = $('#monitor_live_' + monitorId);
