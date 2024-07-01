@@ -1,7 +1,7 @@
 var fs = require('fs')
 module.exports = function(s,config){
     if(!config.language){
-        config.language='en_CA'
+        config.language='ko'
     }
     var lang = {};
     function getLanguageData(choice){
