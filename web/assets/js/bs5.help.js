@@ -43,14 +43,14 @@ function initHelpNotice(){
                 <div class="text-center flex-grow-1">${ button.text }</div>
             </a>`
         })
-        openMessage = new PNotify({
-            title: `It's a proven fact`,
-            text: `
-            <div class="mb-3">Generosity makes you a happier person, please consider supporting the development.</div>
-            <div class="mb-3">If you are already supporting the development, please contact us or use your provided license key and we can get this popup to go away for you <i class="fa fa-smile-o"></i> Cheers!</div>
-            ${buttonHtml}`,
-            hide: false,
-        })
+        // openMessage = new PNotify({
+        //     title: `It's a proven fact`,
+        //     text: `
+        //     <div class="mb-3">Generosity makes you a happier person, please consider supporting the development.</div>
+        //     <div class="mb-3">If you are already supporting the development, please contact us or use your provided license key and we can get this popup to go away for you <i class="fa fa-smile-o"></i> Cheers!</div>
+        //     ${buttonHtml}`,
+        //     hide: false,
+        // })
     }
     function dontShowForOneWeek(){
         if(openMessage){
